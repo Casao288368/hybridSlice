@@ -7,7 +7,7 @@ import template from 'babel-template';
 import plugin from 'babel-plugin-transform-object-rest-spread';
 import sliceCode from 'slice-js/src/slice-code/index.js';
 import transformCoverage from 'slice-js/src/slice-code/transform-coverage.js';
-import { computeStaticReachability } from '/root/joern-integration/index.mjs';
+import { computeStaticReachability } from '../joern-integration/index.mjs';
 
 const coverageVariable = '____sliceCoverage____';
 

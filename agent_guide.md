@@ -112,11 +112,11 @@ cat coverage/results/success.txt
 
 ---
 
-## 五、`/root/joern-integration` 与 `hybrid-sliceImport` 的关系
+## 五、`hybrid-sliceImport/joern-integration` 与主流程的关系
 
 本项目的“混合切片”在切片时会调用 Joern 做静态可达性增强。
 - 切片代码入口：`hybrid-sliceImport/src/joernSlice.mjs`
-- Joern 接口依赖：代码中当前直接导入 `/root/joern-integration/index.mjs`（绝对路径）
+- Joern 接口依赖：代码中当前导入 `../joern-integration/index.mjs`（相对 `src/joernSlice.mjs`）
 
 使用位置：
 ./script-placer.sh "./hybrid-candidates-repos/levn" 会调用 node src/index.mjs
