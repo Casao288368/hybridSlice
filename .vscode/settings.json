@@ -1,0 +1,23 @@
+{
+    "files.watcherExclude": {
+        "cache/**": true,
+        "candidates/**": true,
+
+    },
+    "search.exclude": {
+        "cache/**": true,
+        "candidates/**": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "cache/**": true,
+    },
+    "debug.javascript.codelens.npmScripts": "never",
+    
+    
+    
+}

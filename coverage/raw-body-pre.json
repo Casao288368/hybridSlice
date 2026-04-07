@@ -1,0 +1,82 @@
+
+> raw-body@3.0.2 test
+> mocha --trace-deprecation --reporter spec --check-leaks test/
+
+
+
+  stream flowing
+    when limit lower then length
+      ✔ should stop the steam flow
+      ✔ should halt flowing stream (410ms)
+    when stream has encoding set
+      ✔ should stop the steam flow
+    when stream has limit
+      ✔ should stop the steam flow (304ms)
+    when stream has limit
+      ✔ should stop the steam flow (502ms)
+
+  using http streams
+    ✔ should read body streams
+    ✔ should throw if stream encoding is set
+    ✔ should throw if stream is not readable
+    ✔ should throw if connection ends
+
+  using http2 streams
+    ✔ should read from compatibility api
+    ✔ should read body streams
+    ✔ should throw if stream encoding is set
+    ✔ should throw if connection ends
+
+  Raw Body
+    ✔ should validate stream
+    ✔ should work without any options
+    ✔ should work with `true` as an option
+    ✔ should error for bad callback
+    ✔ should work with length
+    ✔ should work when length=0
+    ✔ should work with limit
+    ✔ should work with limit as a string
+    ✔ should work with limit and length
+    ✔ should check options for limit and length
+    ✔ should work with an empty stream
+    ✔ should throw on empty string and incorrect length
+    ✔ should throw if length > limit
+    ✔ should throw if incorrect length supplied
+    ✔ should work with if length is null
+    ✔ should handle length as string number
+    ✔ should work with {"test":"å"}
+    ✔ should throw if stream encoding is set
+    ✔ should throw when given an invalid encoding
+    ✔ should work on streams1 stream
+    with global Promise
+      ✔ should work as a promise
+      ✔ should work as a promise when length > limit
+    without global Promise
+      ✔ should error without callback
+      ✔ should work with callback as second argument
+      ✔ should work with callback as third argument
+    with async local storage
+      ✔ should presist store in callback
+      ✔ should presist store in promise
+    when an encoding is set
+      ✔ should return a string
+      ✔ should handle encoding true as utf-8
+      ✔ should handle encoding as options string
+      ✔ should decode codepage string
+      ✔ should decode UTF-8 string
+      ✔ should decode UTF-16 string (LE BOM)
+      ✔ should decode UTF-16 string (BE BOM)
+      ✔ should decode UTF-16LE string
+      ✔ should decode UTF-32 string (LE BOM)
+      ✔ should decode UTF-32 string (BE BOM)
+      ✔ should correctly calculate the expected length
+
+  using native streams
+    ✔ should read contents
+    ✔ should read pre-buffered contents
+    ✔ should stop the stream on limit
+    ✔ should throw if stream is not readable
+
+
+  55 passing (2s)
+

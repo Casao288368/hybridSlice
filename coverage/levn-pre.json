@@ -1,0 +1,277 @@
+
+> levn@0.4.1 test
+> make test
+
+node_modules/.bin/mocha --ui tdd --require livescript "test/**/*.ls"
+
+
+  cast
+    ✔ Undefined
+    ✔ Null
+    ✔ NaN
+    ✔ Boolean
+    ✔ Number
+    ✔ Int
+    ✔ Float
+    ✔ Date
+    ✔ RegExp
+    ✔ Array
+    ✔ Object
+    ✔ JSON is valid Object
+    ✔ String
+    ✔ String using quotes
+    ✔ multiple
+    array
+      ✔ regular
+      ✔ children
+      ✔ no delimiters
+      ✔ space after comma with string content
+      ✔ trailing comma
+      ✔ empty
+      ✔ nested
+      ✔ nope
+    tuple
+      ✔ simple
+      ✔ no delimiters
+      ✔ trailing comma
+      ✔ nested
+      ✔ attempt to cast non-array
+      ✔ maybe
+      ✔ nope
+    fields
+      ✔ basic
+      ✔ no delimiters
+      ✔ trailing comma
+      ✔ multiple keys
+      ✔ nested
+      ✔ etc
+      ✔ maybe
+      ✔ with type
+      ✔ nope
+    wildcard
+      ✔ undefined
+      ✔ null
+      ✔ null
+      ✔ bool
+      ✔ number
+      ✔ string
+      ✔ quoted string
+      ✔ date
+      ✔ regex
+      ✔ array
+      ✔ tuple
+      ✔ object
+    nested mixed
+      ✔ array of tuples
+      ✔ array of objects
+      ✔ wildcard
+    options
+      ✔ explicit
+      ✔ custom-types
+
+  index
+    ✔ version
+
+  parse-string
+    ✔ "string"
+    ✔ #date#
+    ✔ /regexp/flags
+    ✔ [array]
+    ✔ (tuple)
+    ✔ {object}
+    ✔ etc
+    ✔ explicit
+    ✔ nothing
+
+
+  66 passing (27ms)
+
+
+> levn@0.4.1 test
+> make test
+
+node_modules/.bin/mocha --ui tdd --require livescript "test/**/*.ls"
+
+> levn@0.4.1 test
+> make test
+
+node_modules/.bin/lsc --compile --output lib "src/cast.ls"
+node_modules/.bin/lsc --compile --output lib "src/index.ls"
+node_modules/.bin/lsc --compile --output lib "src/parse-string.ls"
+node_modules/.bin/mocha --ui tdd --require livescript "test/**/*.ls"
+
+
+  cast
+    ✔ Undefined
+    ✔ Null
+    ✔ NaN
+    ✔ Boolean
+    ✔ Number
+    ✔ Int
+    ✔ Float
+    ✔ Date
+    ✔ RegExp
+    ✔ Array
+    ✔ Object
+    ✔ JSON is valid Object
+    ✔ String
+    ✔ String using quotes
+    ✔ multiple
+    array
+      ✔ regular
+      ✔ children
+      ✔ no delimiters
+      ✔ space after comma with string content
+      ✔ trailing comma
+      ✔ empty
+      ✔ nested
+      ✔ nope
+    tuple
+      ✔ simple
+      ✔ no delimiters
+      ✔ trailing comma
+      ✔ nested
+      ✔ attempt to cast non-array
+      ✔ maybe
+      ✔ nope
+    fields
+      ✔ basic
+      ✔ no delimiters
+      ✔ trailing comma
+      ✔ multiple keys
+      ✔ nested
+      ✔ etc
+      ✔ maybe
+      ✔ with type
+      ✔ nope
+    wildcard
+      ✔ undefined
+      ✔ null
+      ✔ null
+      ✔ bool
+      ✔ number
+      ✔ string
+      ✔ quoted string
+      ✔ date
+      ✔ regex
+      ✔ array
+      ✔ tuple
+      ✔ object
+    nested mixed
+      ✔ array of tuples
+      ✔ array of objects
+      ✔ wildcard
+    options
+      ✔ explicit
+      ✔ custom-types
+
+  index
+    ✔ version
+
+  parse-string
+    ✔ "string"
+    ✔ #date#
+    ✔ /regexp/flags
+    ✔ [array]
+    ✔ (tuple)
+    ✔ {object}
+    ✔ etc
+    ✔ explicit
+    ✔ nothing
+
+
+  66 passing (28ms)
+
+
+> levn@0.4.1 test
+> make test
+
+node_modules/.bin/mocha --ui tdd --require livescript "test/**/*.ls"
+
+> levn@0.4.1 test
+> make test
+
+node_modules/.bin/mocha --ui tdd --require livescript "test/**/*.ls"
+
+
+  cast
+    ✔ Undefined
+    ✔ Null
+    ✔ NaN
+    ✔ Boolean
+    ✔ Number
+    ✔ Int
+    ✔ Float
+    ✔ Date
+    ✔ RegExp
+    ✔ Array
+    ✔ Object
+    ✔ JSON is valid Object
+    ✔ String
+    ✔ String using quotes
+    ✔ multiple
+    array
+      ✔ regular
+      ✔ children
+      ✔ no delimiters
+      ✔ space after comma with string content
+      ✔ trailing comma
+      ✔ empty
+      ✔ nested
+      ✔ nope
+    tuple
+      ✔ simple
+      ✔ no delimiters
+      ✔ trailing comma
+      ✔ nested
+      ✔ attempt to cast non-array
+      ✔ maybe
+      ✔ nope
+    fields
+      ✔ basic
+      ✔ no delimiters
+      ✔ trailing comma
+      ✔ multiple keys
+      ✔ nested
+      ✔ etc
+      ✔ maybe
+      ✔ with type
+      ✔ nope
+    wildcard
+      ✔ undefined
+      ✔ null
+      ✔ null
+      ✔ bool
+      ✔ number
+      ✔ string
+      ✔ quoted string
+      ✔ date
+      ✔ regex
+      ✔ array
+      ✔ tuple
+      ✔ object
+    nested mixed
+      ✔ array of tuples
+      ✔ array of objects
+      ✔ wildcard
+    options
+      ✔ explicit
+      ✔ custom-types
+
+  index
+    ✔ version
+
+  parse-string
+    ✔ "string"
+    ✔ #date#
+    ✔ /regexp/flags
+    ✔ [array]
+    ✔ (tuple)
+    ✔ {object}
+    ✔ etc
+    ✔ explicit
+    ✔ nothing
+
+
+  66 passing (27ms)
+

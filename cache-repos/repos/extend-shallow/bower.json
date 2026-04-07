@@ -1,0 +1,67 @@
+{
+  "name": "extend-shallow",
+  "description": "Extend an object with the properties of additional objects. node.js/javascript util.",
+  "repository": "jonschlinkert/extend-shallow",
+  "license": "MIT",
+  "homepage": "https://github.com/jonschlinkert/extend-shallow",
+  "authors": [
+    "Jon Schlinkert (https://github.com/jonschlinkert)"
+  ],
+  "main": [
+    "index.js"
+  ],
+  "dependencies": {
+    "is-extendable": "^1.0.1"
+  },
+  "devDependencies": {
+    "array-slice": "^1.0.0",
+    "benchmarked": "^2.0.0",
+    "for-own": "^1.0.0",
+    "gulp-format-md": "^1.0.0",
+    "is-plain-object": "^2.0.4",
+    "kind-of": "^6.0.1",
+    "minimist": "^1.2.0",
+    "mocha": "^3.5.3",
+    "object-assign": "^4.1.1"
+  },
+  "keywords": [
+    "assign",
+    "clone",
+    "extend",
+    "merge",
+    "obj",
+    "object",
+    "object-assign",
+    "object.assign",
+    "prop",
+    "properties",
+    "property",
+    "props",
+    "shallow",
+    "util",
+    "utility",
+    "utils",
+    "value"
+  ],
+  "version": "2.0.1",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/extend-shallow/issues"
+  },
+  "files": [
+    "index.js"
+  ],
+  "ignore": [
+    "actual",
+    "bower_components",
+    "fixtures",
+    "node_modules",
+    "temp",
+    "test",
+    "test.js",
+    "tmp"
+  ],
+  "contributors": [
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "Peter deHaan (http://about.me/peterdehaan)"
+  ]
+}

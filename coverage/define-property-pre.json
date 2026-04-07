@@ -1,0 +1,19 @@
+
+> define-property@2.0.2 test
+> mocha
+
+
+[0m[0m
+[0m  define[0m
+  [32m  ✓[0m[90m should define a property and make it non-enumerable:[0m
+  [32m  ✓[0m[90m should allow any arbitrary value to be assigned:[0m
+  [32m  ✓[0m[90m should define a property with accessor descriptors:[0m
+  [32m  ✓[0m[90m should define a property on a function[0m
+  [32m  ✓[0m[90m should define a property on an array[0m
+  [32m  ✓[0m[90m should define a property on an error[0m
+  [32m  ✓[0m[90m should define a property with data descriptors:[0m
+  [32m  ✓[0m[90m should throw an error when invalid args are passed:[0m
+
+
+[92m [0m[32m 8 passing[0m[90m (8ms)[0m
+

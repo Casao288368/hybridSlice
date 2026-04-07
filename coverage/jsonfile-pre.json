@@ -1,0 +1,92 @@
+
+> jsonfile@6.2.0 test
+> npm run lint && npm run unit
+
+
+> jsonfile@6.2.0 lint
+> standard
+
+
+> jsonfile@6.2.0 unit
+> mocha
+
+
+
+  + readFileSync()
+    ✓ should read and parse JSON
+    > when invalid JSON
+      ✓ should include the filename in the error
+    > when invalid JSON and throws set to false
+      ✓ should return null
+    > when invalid JSON and throws set to true
+      ✓ should throw an exception
+    > when json file is missing and throws set to false
+      ✓ should return null
+    > when json file is missing and throws set to true
+      ✓ should throw an exception
+    > when JSON reviver is set
+      ✓ should transform the JSON
+    > when passing encoding string as option
+      ✓ should not throw an error
+    > w/ BOM
+      ✓ should properly parse
+
+  + readFile()
+    ✓ should read and parse JSON
+    ✓ should resolve a promise with parsed JSON
+    > when invalid JSON
+      ✓ should include the filename in the error
+      ✓ should reject the promise with filename in error
+    > when invalid JSON and throws set to false
+      ✓ should return null and no error
+      ✓ should resolve the promise with null as data
+    > when invalid JSON and throws set to true
+      ✓ should return an error
+      ✓ should reject the promise
+    > when JSON reviver is set
+      ✓ should transform the JSON
+      ✓ should resolve the promise with transformed JSON
+    > when passing encoding string as option
+      ✓ should not throw an error
+      ✓ should resolve the promise
+    > w/ BOM
+      ✓ should properly parse
+      ✓ should resolve the promise with parsed JSON
+
+  + writeFileSync()
+    ✓ should serialize the JSON and write it to file
+    > when JSON replacer is set
+      ✓ should replace JSON
+    > when spaces passed as an option
+      ✓ should write file with spaces
+      ✓ should use EOL override
+    > when passing encoding string as options
+      ✓ should not error
+    > when EOF option is set to a falsey value
+      ✓ should not have a the EOL symbol at the end of file
+      ✓ should have a the EOL symbol at the end of file when finalEOL is a truth value in options
+
+  + writeFile()
+    ✓ should serialize and write JSON
+    ✓ should write JSON, resolve promise
+    > when JSON replacer is set
+      ✓ should replace JSON
+      ✓ should replace JSON, resolve promise
+    > when spaces passed as an option
+      ✓ should write file with spaces
+      ✓ should write file with spaces, resolve the promise
+    > when spaces, EOL are passed as options
+      ✓ should use EOL override
+      ✓ should use EOL override, resolve the promise
+    > when passing encoding string as options
+      ✓ should not error
+      ✓ should not error, resolve the promise
+    > when EOF option is set to a falsey value
+      ✓ should not have a the EOL symbol at the end of file
+      ✓ should have a the EOL symbol at the end of file when finalEOL is a truth value in options
+    > when callback isn't passed & can't serialize
+      ✓ should not write an empty file, should reject the promise
+
+
+  43 passing (73ms)
+

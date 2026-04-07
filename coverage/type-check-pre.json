@@ -1,0 +1,129 @@
+
+> type-check@0.4.0 test
+> make test
+
+node_modules/.bin/lsc --compile --output lib "src/check.ls"
+node_modules/.bin/lsc --compile --output lib "src/index.ls"
+node_modules/.bin/lsc --compile --output lib "src/parse-type.ls"
+node_modules/.bin/mocha --ui tdd --require livescript "test/**/*.ls"
+
+
+  check
+    ✔ Undefined
+    ✔ Undefined in field
+    ✔ Undefined in tuple
+    ✔ Null
+    ✔ Boolean
+    ✔ String
+    ✔ Number
+    ✔ NaN
+    ✔ Int
+    ✔ Float
+    ✔ Date
+    ✔ Function
+    ✔ wildcard
+    ✔ multiple
+    ✔ bare Object
+    ✔ nested
+    ✔ nexted with union
+    Array
+      ✔ bare
+      ✔ simple
+      ✔ incorrect type
+      ✔ incorrect element type
+    Tuple
+      ✔ simple
+      ✔ too long
+      ✔ too short
+      ✔ incorrect type
+      ✔ incorrect element type
+    Maybe
+      ✔ simple
+      ✔ with multiple
+      ✔ in fields
+      ✔ in tuple
+      ✔ in array
+    duck typing
+      ✔ basic
+      ✔ property must by appropriate type
+      ✔ key must be the same
+      ✔ not an object - fails
+      ✔ non-enumerable properties
+      ✔ enumerable and non-enumerable properties
+      ✔ using spread operator to check only a subset of the properties
+    structures with types
+      ✔ fields with Object
+      ✔ fields with Array
+      ✔ fields with JSON
+      ✔ fields with Math (using subset)
+      ✔ array structure with Array
+      ✔ array structure with Object
+      ✔ tuple structure with Array
+      ✔ tuple structure with Object
+    custom types
+      ✔ simple
+      ✔ overwrite current
+      ✔ type-of is optional
+      ✔ nested check with custom types
+    errors
+      ✔ no type defined
+      ✔ types must be in array
+
+  index
+    ✔ version
+
+  parse type
+    ✔ simple
+    ✔ different characters
+    ✔ Maybe
+    ✔ wildcard
+    multiple types
+      ✔ one
+      ✔ two
+      ✔ three
+      ✔ two
+    optional comment
+      ✔ basic
+      ✔ multiple
+      ✔ structures
+      ✔ no comment specified
+    array structure
+      ✔ simple
+      ✔ nested
+      ✔ nested with multiple
+    array structure with type
+      ✔ simple
+      ✔ nested
+    tuple structure
+      ✔ single
+      ✔ double
+      ✔ trailing comma
+      ✔ nested
+    tuple structure with type
+      ✔ double
+      ✔ nested
+    fields structure, without type
+      ✔ simple
+      ✔ trailing comma
+      ✔ nested
+      ✔ subset
+      ✔ no fields specified
+    fields structure, with type
+      ✔ simple
+      ✔ nested
+      ✔ subset
+      ✔ no fields specified
+    errors
+      ✔ no type specified
+      ✔ tuple of length 0
+      ✔ array without type
+      ✔ unexpected end of input
+      ✔ unexpected end of input (input never tokenized)
+      ✔ unexpected character
+      ✔ function types not supported
+      ✔ expected op
+      ✔ expected text
+
+
+  94 passing (27ms)
+

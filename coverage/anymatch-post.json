@@ -1,0 +1,50 @@
+
+> anymatch@3.1.3 test
+> nyc mocha
+
+
+
+  anymatch
+    ✔ should resolve string matchers
+    ✔ should resolve glob matchers
+    ✔ should resolve regexp matchers
+    ✔ should resolve function matchers
+    ✔ should return false for unmatched strings
+    ✔ should ignore improperly typed matchers
+    ✔ should keep trailing separators on paths to match /*/ globs
+    with returnIndex = true
+      ✔ should return the array index of first positive matcher
+      ✔ should return 0 if provided non-array matcher
+      ✔ should return -1 if no match
+    curried matching function
+      ✔ should resolve matchers
+      ✔ should be usable as an Array.prototype.filter callback
+      ✔ should bind individual criterion
+    extra args
+      ✔ should not allow no args
+      ✔ should not allow bad testString
+      ✔ should allow string to be passed as first member of an array
+      ✔ should pass extra args to function matchers
+    glob negation
+      ✔ should respect negated globs included in a matcher array
+      ✔ should not break returnIndex option
+      ✔ should allow negated globs to negate non-glob matchers
+      ✔ should not match negated matchers if positive matchers do not match
+    windows paths
+      ✔ should resolve backslashes against string matchers
+      ✔ should resolve backslashes against glob matchers
+      ✔ should resolve backslashes against regex matchers
+      ✔ should resolve backslashes against function matchers
+      ✔ should still correctly handle forward-slash paths
+    picomatch options
+      ✔ should support picomatch options
+
+
+  27 passing (21ms)
+
+----------|---------|----------|---------|---------|-------------------
+File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------|---------|----------|---------|---------|-------------------
+All files |     100 |      100 |     100 |     100 |                   
+ index.js |     100 |      100 |     100 |     100 |                   
+----------|---------|----------|---------|---------|-------------------

@@ -1,0 +1,65 @@
+
+> mime-types@3.0.2 test
+> mocha --reporter spec test/test.js
+
+
+
+  mimeTypes
+    .charset(type)
+      ✔ should return "UTF-8" for "application/json"
+      ✔ should return "UTF-8" for "application/json; foo=bar"
+      ✔ should return "UTF-8" for "application/javascript"
+      ✔ should return "UTF-8" for "application/JavaScript"
+      ✔ should return "UTF-8" for "text/html"
+      ✔ should return "UTF-8" for "TEXT/HTML"
+      ✔ should return "UTF-8" for any text/*
+      ✔ should return false for unknown types
+      ✔ should return false for any application/octet-stream
+      ✔ should return false for invalid arguments
+    .contentType(extension)
+      ✔ should return content-type for "html"
+      ✔ should return content-type for ".html"
+      ✔ should return content-type for "jade"
+      ✔ should return content-type for "json"
+      ✔ should return false for unknown extensions
+      ✔ should return false for invalid arguments
+    .contentType(type)
+      ✔ should attach charset to "application/json"
+      ✔ should attach charset to "application/json; foo=bar"
+      ✔ should attach charset to "TEXT/HTML"
+      ✔ should attach charset to "text/html"
+      ✔ should not alter "text/html; charset=iso-8859-1"
+      ✔ should return type for unknown types
+    .extension(type)
+      ✔ should return extension for mime type
+      ✔ should return false for unknown type
+      ✔ should return false for non-type string
+      ✔ should return false for non-strings
+      ✔ should return extension for mime type with parameters
+    .lookup(extension)
+      ✔ should return mime type for ".html"
+      ✔ should return mime type for ".js"
+      ✔ should return mime type for ".json"
+      ✔ should return mime type for ".rtf"
+      ✔ should return mime type for ".txt"
+      ✔ should return mime type for ".xml"
+      ✔ should return mime type for ".mp4"
+      ✔ should work without the leading dot
+      ✔ should be case insensitive
+      ✔ should return false for unknown extension
+      ✔ should return false for non-strings
+    .lookup(path)
+      ✔ should return mime type for file name
+      ✔ should return mime type for relative path
+      ✔ should return mime type for absolute path
+      ✔ should be case insensitive
+      ✔ should return false for unknown extension
+      ✔ should return false for path without extension
+      path with dotfile
+        ✔ should return false when extension-less
+        ✔ should return mime type when there is extension
+        ✔ should return mime type when there is extension, but no path
+
+
+  47 passing (13ms)
+

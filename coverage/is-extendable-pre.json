@@ -1,0 +1,26 @@
+
+> is-extendable@1.0.1 test
+> mocha
+
+
+[0m[0m
+[0m  isExtendable[0m
+  [32m  ✓[0m[90m should return true when a value is an object:[0m
+  [32m  ✓[0m[90m should return false when a value is not an object:[0m
+
+
+[92m [0m[32m 2 passing[0m[90m (5ms)[0m
+
+
+> is-extendable@1.0.1 test
+> mocha
+
+
+[0m[0m
+[0m  isExtendable[0m
+  [32m  ✓[0m[90m should return true when a value is an object:[0m
+  [32m  ✓[0m[90m should return false when a value is not an object:[0m
+
+
+[92m [0m[32m 2 passing[0m[90m (5ms)[0m
+

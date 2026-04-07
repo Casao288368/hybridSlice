@@ -1,0 +1,91 @@
+
+> on-finished@2.4.1 test
+> mocha --reporter spec --check-leaks test/
+
+
+
+  onFinished(res, listener)
+    ✔ should invoke listener given an unknown object
+    when the response finishes
+      ✔ should fire the callback
+      ✔ should include the response object
+      when called after finish
+        ✔ should fire when called after finish
+        when async local storage
+          ✔ should presist store in callback
+      when async local storage
+        ✔ should presist store in callback
+    when using keep-alive
+      ✔ should fire for each response (46ms)
+    when requests pipelined
+      ✔ should fire for each request
+    when response errors
+      ✔ should fire with error
+      ✔ should include the response object
+    when the response aborts
+      ✔ should execute the callback
+    when calling many times on same response
+      ✔ should not print warnings
+
+  isFinished(res)
+    ✔ should be false before response finishes
+    ✔ should be true after response finishes
+    when response is invalid
+      ✔ should throw TypeError for null and undefined
+      ✔ should return undefined for unknown object, number, string, and boolean
+    when requests pipelined
+      ✔ should have correct state when socket shared
+      ✔ should handle aborted requests
+    when response errors
+      ✔ should return true
+    when the response aborts
+      ✔ should return true
+
+  onFinished(req, listener)
+    when the request finishes
+      ✔ should fire the callback
+      ✔ should include the request object
+      when called after finish
+        ✔ should fire when called after finish
+        when async local storage
+          ✔ should presist store in callback
+      when async local storage
+        ✔ should presist store in callback
+    when using keep-alive
+      ✔ should fire for each request (42ms)
+    when request errors
+      ✔ should fire with error
+      ✔ should include the request object
+    when requests pipelined
+      ✔ should handle socket errors
+    when the request aborts
+      ✔ should execute the callback
+    when calling many times on same request
+      ✔ should not print warnings
+    when CONNECT method
+      ✔ should fire when request finishes
+      ✔ should fire when called after finish
+    when Upgrade request
+      ✔ should fire when request finishes
+      ✔ should fire when called after finish
+
+  isFinished(req)
+    ✔ should return undefined for unknown object
+    ✔ should be false before request finishes
+    ✔ should be true after request finishes
+    when request data buffered
+      ✔ should be false before request finishes
+    when request errors
+      ✔ should return true
+    when the request aborts
+      ✔ should return true
+    when CONNECT method
+      ✔ should be true immediately
+      ✔ should be true after request finishes
+    when Upgrade request
+      ✔ should be true immediately
+      ✔ should be true after request finishes
+
+
+  45 passing (204ms)
+

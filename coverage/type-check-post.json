@@ -1,0 +1,5 @@
+
+> type-check@0.4.0 test
+> make test
+
+node_modules/.bin/mocha --ui tdd --require livescript "test/**/*.ls"

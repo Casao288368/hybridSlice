@@ -1,0 +1,108 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+      - '2.x'
+    paths-ignore:
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - '*.md'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    permissions:
+      checks: write  # for coverallsapp/github-action to create new checks
+      contents: read  # for actions/checkout to fetch code
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        name:
+        - Node.js 18.x
+        - Node.js 19.x
+        - Node.js 20.x
+        - Node.js 21.x
+        - Node.js 22.x
+
+        include:
+        - name: Node.js 18.x
+          node-version: "18"
+
+        - name: Node.js 19.x
+          node-version: "19"
+
+        - name: Node.js 20.x
+          node-version: "20"
+
+        - name: Node.js 21.x
+          node-version: "21"
+
+        - name: Node.js 22.x
+          node-version: "22"
+
+    steps:
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+    - name: Install Node.js ${{ matrix.node-version }}
+      shell: bash -eo pipefail -l {0}
+      run: |
+        nvm install --default ${{ matrix.node-version }}
+        dirname "$(nvm which ${{ matrix.node-version }})" >> "$GITHUB_PATH"
+
+    - name: Configure npm
+      run: |
+        if [[ "$(npm config get package-lock)" == "true" ]]; then
+          npm config set package-lock false
+        else
+          npm config set shrinkwrap false
+        fi
+
+    - name: Install Node.js dependencies
+      run: npm install
+
+    - name: List environment
+      id: list_env
+      shell: bash
+      run: |
+        echo "node@$(node -v)"
+        echo "npm@$(npm -v)"
+        npm -s ls ||:
+        (npm -s ls --depth=0 ||:) | awk -F'[ @]' 'NR>1 && $2 { print "::set-output name=" $2 "::" $3 }'
+
+    - name: Run tests
+      shell: bash
+      run: |
+        if npm -ps ls nyc | grep -q nyc; then
+          npm run test-ci
+        else
+          npm test
+        fi
+
+    - name: Lint code
+      if: steps.list_env.outputs.eslint != ''
+      run: npm run lint
+
+    - name: Collect code coverage
+      uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b # master
+      if: steps.list_env.outputs.nyc != ''
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        flag-name: run-${{ matrix.test_number }}
+        parallel: true
+
+  coverage:
+    permissions:
+      checks: write  # for coverallsapp/github-action to create new checks
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Upload code coverage
+      uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b # master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        parallel-finished: true

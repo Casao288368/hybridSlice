@@ -1,0 +1,12 @@
+dist
+output.csv
+output/
+node_modules/
+cache
+failed-install.txt
+success copy.txt
+current-processing.log
+current.log
+left_subtract.txt
+processed.log
+candidates/
